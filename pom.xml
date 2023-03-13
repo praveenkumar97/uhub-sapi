@@ -17,7 +17,9 @@
 		<app.runtime>4.4.0-20221026</app.runtime>
 		<mule.maven.plugin.version>3.8.0</mule.maven.plugin.version>
 	</properties>
-
+	<profiles>
+		<profile>
+			<id>dev</id>
 	<build>
 		<plugins>
 			<plugin>
@@ -41,6 +43,13 @@
 						<region>us-east-1</region>
 						<workers>1</workers>
 						<workerType>MICRO</workerType>
+						<properties>
+									<env>dev</env>
+									<enc.key>${enc.key}</enc.key>
+									<api.id>17458358</api.id>
+									<anypoint.platform.client_id>${anypoint.platform.client_id}</anypoint.platform.client_id>
+									<anypoint.platform.client_secret>${anypoint.platform.client_secret}</anypoint.platform.client_secret>
+								</properties>
 						<objectStoreV2>true</objectStoreV2>
 					</cloudHubDeployment>
 					<sharedLibraries>
@@ -53,7 +62,8 @@
 			</plugin>
 		</plugins>
 	</build>
-
+</profile>
+	</profiles>
 	<dependencies>
 		<dependency>
 			<groupId>org.mule.connectors</groupId>
