@@ -54,7 +54,7 @@
 					</cloudHubDeployment>
 					<sharedLibraries>
 						<sharedLibrary>
-							<groupId>com.oracle</groupId>
+							<groupId>com.oracle.jdbc</groupId>
 							<artifactId>ojdbc8</artifactId>
 						</sharedLibrary>
 					</sharedLibraries>
@@ -103,11 +103,13 @@
 			<version>1.13.8</version>
 			<classifier>mule-plugin</classifier>
 		</dependency>
-		<dependency>
-			<groupId>com.oracle</groupId>
-			<artifactId>ojdbc8</artifactId>
-			<version>0.1</version>
-		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.oracle.jdbc/ojdbc8 -->
+<dependency>
+    <groupId>com.oracle.jdbc</groupId>
+    <artifactId>ojdbc8</artifactId>
+    <version>12.2.0.1</version>
+</dependency>
+
 	</dependencies>
 	<repositories>
 		<repository>
