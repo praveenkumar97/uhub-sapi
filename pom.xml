@@ -37,10 +37,10 @@
 						<username>Praveenkumar_NGS25</username>
 						<password>Praveen@123</password>
 						<applicationName>temp-dev-uhub-sapi</applicationName>
-						<environment>dev</environment>
+						<environment>DEV</environment>
 						<region>us-east-1</region>
 						<workers>1</workers>
-						<workerType>MICRO</workerType>														
+						<workerType>MICRO</workerType>
 						<objectStoreV2>true</objectStoreV2>
 					</cloudHubDeployment>
 					<sharedLibraries>
