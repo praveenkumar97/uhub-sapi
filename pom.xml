@@ -31,6 +31,18 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
+					<cloudHubDeployment>
+<uri>https://anypoint.mulesoft.com</uri>
+<muleVersion>4.4.0</muleVersion>
+<username>Praveenkumar_NGS25</username>
+<password>Praveen@123</password>
+<applicationName>temp-dev-uhub-sapi</applicationName>
+<environment>Sandbox</environment>
+<region>us-east-1</region>
+<workers>1</workers>
+<workerType>MICRO</workerType>
+<objectStoreV2>true</objectStoreV2>
+</cloudHubDeployment>
 					<sharedLibraries>
 						<sharedLibrary>
 							<groupId>com.mycompany</groupId>
