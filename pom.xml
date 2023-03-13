@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -8,17 +9,17 @@
 	<artifactId>uhub-sapi</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
-
 	<name>uhub-sapi</name>
-
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8
 		</project.reporting.outputEncoding>
-
 		<app.runtime>4.4.0-20221026</app.runtime>
 		<mule.maven.plugin.version>3.8.0</mule.maven.plugin.version>
 	</properties>
+	<profiles>
+		<profile>
+			<id>dev</id>
 
 
 	<build>
@@ -35,11 +36,25 @@
 				<extensions>true</extensions>
 				<configuration>
 					<cloudHubDeployment>
+						<uri>https://anypoint.mulesoft.com</uri>
+						<muleVersion>4.4.0</muleVersion>
+						<username>Praveenkumar_NGS25</username>
+						<password>Praveen@123</password>
+						<applicationName>temp-dev-uhub-sapi</applicationName>
+						<environment>DEV</environment>
 						<applicationName>uho-dev-uhub-sapi</applicationName>
 						<environment>dev</environment>
 						<region>us-east-1</region>
 						<workers>1</workers>
 						<workerType>MICRO</workerType>
+						<properties>
+									<env>dev</env>
+									<enc.key>${enc.key}</enc.key>
+									<api.id>17458358</api.id>
+									<anypoint.platform.client_id>${anypoint.platform.client_id}</anypoint.platform.client_id>
+									<anypoint.platform.client_secret>${anypoint.platform.client_secret}</anypoint.platform.client_secret>
+								</properties>
+						<objectStoreV2>true</objectStoreV2>
 
 					</cloudHubDeployment>
 					<sharedLibraries>
@@ -52,6 +67,8 @@
 			</plugin>
 		</plugins>
 	</build>
+</profile>
+	</profiles>
 
 
 	<dependencies>
@@ -73,6 +90,12 @@
 			<version>1.7.1</version>
 			<classifier>mule-plugin</classifier>
 		</dependency>
+		<!-- <dependency>
+			<groupId>com.mulesoft.modules</groupId>
+			<artifactId>mule-secure-configuration-property-module</artifactId>
+			<classifier>mule-plugin</classifier>
+			<version>1.0.0</version>
+		</dependency> -->
 		<!-- <dependency> <groupId>com.mulesoft.modules</groupId> <artifactId>mule-secure-configuration-property-module</artifactId> 
 			<classifier>mule-plugin</classifier> <version>1.0.0</version> </dependency> -->
 		<dependency>
@@ -93,7 +116,6 @@
 			<version>0.1</version>
 		</dependency>
 	</dependencies>
-
 	<repositories>
 		<repository>
 			<id>anypoint-exchange-v3</id>
@@ -108,7 +130,6 @@
 			<layout>default</layout>
 		</repository>
 	</repositories>
-
 	<pluginRepositories>
 		<pluginRepository>
 			<id>mulesoft-releases</id>
@@ -120,5 +141,4 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
-
 </project>
