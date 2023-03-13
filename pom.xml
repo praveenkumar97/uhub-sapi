@@ -54,7 +54,7 @@
 					</cloudHubDeployment>
 					<sharedLibraries>
 						<sharedLibrary>
-							<groupId>com.mycompany</groupId>
+							<groupId>com.oracle</groupId>
 							<artifactId>ojdbc8</artifactId>
 						</sharedLibrary>
 					</sharedLibraries>
@@ -104,7 +104,7 @@
 			<classifier>mule-plugin</classifier>
 		</dependency>
 		<dependency>
-			<groupId>com.mycompany</groupId>
+			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc8</artifactId>
 			<version>0.1</version>
 		</dependency>
